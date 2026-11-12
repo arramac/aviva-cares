@@ -366,6 +366,16 @@
   .fund-point{background:#fff; color:var(--ink); border-radius:16px; padding:18px 20px}
   .fund-point h3{font-size:1.22rem; margin-bottom:7px}
   .fund-point p{color:var(--ink-soft); font-size:.97rem; line-height:1.65}
+
+  /* ---------- Research ---------- */
+  .paper-card{border:1.5px solid var(--rule-soft); border-radius:18px; background:#fff; padding:26px 22px; margin-top:26px}
+  .paper-card .paper-k{font-size:.72rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--purple)}
+  .paper-card h2{font-size:1.6rem; margin-top:10px; max-width:24em}
+  .paper-card .paper-authors{margin-top:12px; font-weight:700}
+  .paper-card .paper-meta{margin-top:6px; color:var(--ink-faint); font-size:.93rem; line-height:1.6; max-width:44em}
+  .paper-card h3{font-size:1.25rem; margin-top:24px}
+  .paper-card .paper-overview{margin-top:8px; color:var(--ink-soft); line-height:1.7; max-width:44em}
+  .paper-card .paper-links{display:flex; flex-wrap:wrap; gap:12px; margin-top:24px}
   .fund-actions{margin-top:28px; display:flex; flex-wrap:wrap; gap:14px 22px; align-items:center}
   .fund-note{font-size:.92rem; line-height:1.55; color:#e8e8e8; max-width:30em}
 
@@ -470,6 +480,11 @@
           <li>
             <a class="nav-link" href="#/stories" data-route="stories">
               <span class="nav-title"><span class="nav-name">Aviva&rsquo;s Stories</span> <span class="arr" aria-hidden="true">&rarr;</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#/research" data-route="research">
+              <span class="nav-title"><span class="nav-name">Research</span> <span class="arr" aria-hidden="true">&rarr;</span></span>
             </a>
           </li>
           <li>
@@ -858,6 +873,31 @@
         </nav>
       </section>
 
+      <!-- ================= PAGE: RESEARCH ================= -->
+      <section class="page" data-page="research" aria-labelledby="research-heading">
+        <div class="sec-head">
+          <p class="eyebrow">Research</p>
+          <h1 id="research-heading" tabindex="-1">Research runs in my family</h1>
+          <p class="intro">Science is a big part of why I do what I do, and it runs in my family too. My sister Rena co-authored this published paper on wearable sensors, the same kind of technology that helps people like me keep track of our bodies every day.</p>
+        </div>
+        <article class="paper-card">
+          <p class="paper-k">Conference paper &middot; ICSIPA 2026</p>
+          <h2>Electrodermal Activity as a Unimodal Signal for Aerobic Exercise Detection in Wearable Sensors</h2>
+          <p class="paper-authors">Rena Mira Krishna, Ramya Sankar, Shadi Ghiasi</p>
+          <p class="paper-meta">Proceedings of the 2026 IEEE 9th International Conference on Signal &amp; Image Processing Applications (ICSIPA 2026), September 9, 2026, Melaka, Malaysia. First published March 2026 as arXiv:2603.15880 &middot; DOI: 10.48550/arXiv.2603.15880</p>
+          <h3>What the paper is about</h3>
+          <p class="paper-overview">Electrodermal activity (EDA) is a signal many wearables can already measure without any extra hardware. It reflects how the sympathetic nervous system responds, for instance when the body starts working hard. This study asks a focused question: can features from EDA alone reliably tell rest apart from sustained aerobic exercise? To find out, the team used data from thirty healthy individuals and tested benchmark machine learning models with leave-one-subject-out validation, so every model was judged on people it had never seen. The EDA-only classifiers reached moderate subject-independent performance, and the timing and shape of the signal&rsquo;s fast-changing phasic component helped most in separating the two states. The authors are careful about the limits: the paper is a conservative benchmark of what EDA on its own can do, not a replacement for wearables that combine several signals.</p>
+          <p class="paper-links">
+            <a class="btn btn-solid" href="https://ui.adsabs.harvard.edu/abs/2026arXiv260315880K/abstract" target="_blank" rel="noopener">Read the paper on ADS <span class="ext" aria-hidden="true">&nearr;</span></a>
+            <a class="btn" href="http://arxiv.org/abs/2603.15880" target="_blank" rel="noopener">View on arXiv <span class="ext" aria-hidden="true">&nearr;</span></a>
+          </p>
+        </article>
+        <nav class="page-nav" aria-label="More pages">
+          <a href="#/stories">&larr; Aviva&rsquo;s Stories</a>
+          <a href="#/join">Next: Join the Mission &rarr;</a>
+        </nav>
+      </section>
+
       <!-- ================= PAGE: STORIES INDEX ================= -->
       <section class="page" data-page="stories" aria-labelledby="stories-heading">
         <div class="sec-head">
@@ -902,7 +942,7 @@
         </div>
         <nav class="page-nav" aria-label="More pages">
           <a href="#/fundraiser">&larr; Breakthrough T1D Fundraiser</a>
-          <a href="#/join">Next: Join the Mission &rarr;</a>
+          <a href="#/research">Next: Research &rarr;</a>
         </nav>
       </section>
 
@@ -993,7 +1033,7 @@
           <p><a class="btn btn-ink" href="https://www.instagram.com/avivacares/" target="_blank" rel="noopener">Say hello on Instagram <span class="ext" aria-hidden="true">&nearr;</span></a></p>
         </div>
         <nav class="page-nav" aria-label="More pages">
-          <a href="#/stories">&larr; Aviva&rsquo;s Stories</a>
+          <a href="#/research">&larr; Research</a>
           <a href="#/home">Back to Home &rarr;</a>
         </nav>
       </section>
@@ -1010,6 +1050,7 @@
           <a href="#/t1d101">T1D 101</a>
           <a href="#/fundraiser">Fundraiser</a>
           <a href="#/stories">Aviva&rsquo;s Stories</a>
+          <a href="#/research">Research</a>
           <a href="#/join">Join the Mission</a>
         </nav>
         <p>Photographs from <a href="https://www.instagram.com/avivacares/" target="_blank" rel="noopener">@avivacares</a> on Instagram, used with her captions.</p>
@@ -1060,12 +1101,13 @@
     '/stories/welcome-to-aviva-cares': { page:'story-1', nav:'stories', title:'Aviva Cares — Welcome to Aviva Cares' },
     '/stories/what-that-beep-means':   { page:'story-2', nav:'stories', title:'Aviva Cares — What That Beep Means' },
     '/stories/type-1-vs-type-2':       { page:'story-3', nav:'stories', title:'Aviva Cares — Type 1 vs. Type 2 Diabetes' },
+    '/research':   { page:'research',   nav:'research',   title:'Aviva Cares — Research' },
     '/join':       { page:'join',       nav:'join',       title:'Aviva Cares — Join the Mission' }
   };
   var LEGACY = {
     'top':'/home', 'about':'/about', 'instagram':'/photos', 'photos':'/photos',
     't1d101':'/t1d101', 'fundraiser':'/fundraiser', 'blog':'/stories',
-    'stories':'/stories', 'join':'/join', 'home':'/home',
+    'stories':'/stories', 'join':'/join', 'home':'/home', 'research':'/research',
     'post-1':'/stories/welcome-to-aviva-cares',
     'post-2':'/stories/what-that-beep-means',
     'post-3':'/stories/type-1-vs-type-2'
