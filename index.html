@@ -418,23 +418,50 @@
   .post .handout h3{font-size:1.3rem; margin-bottom:8px}
   .post .handout p{color:var(--ink-soft); line-height:1.65; max-width:40em}
   .post .handout .btn{margin-top:16px}
+  .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+  .post .body h3{font-size:1.18rem; line-height:1.3; margin-top:10px; font-family:"Newsreader", Georgia, serif}
+  .glance-summary{border:1.5px solid var(--rule-soft); border-radius:16px; background:#fff; padding:16px 18px}
+  .glance-summary p{font-size:1rem !important; line-height:1.65 !important}
+  .glance-summary p + p{margin-top:8px}
+  .compare-table{width:100%; border-collapse:collapse; margin-top:18px; font-size:.95rem; line-height:1.55; color:var(--ink-soft)}
+  .compare-table th, .compare-table td{border:1px solid var(--rule-soft); padding:11px 12px; text-align:left; vertical-align:top}
+  .compare-table thead th{background:#fff; color:var(--ink); font-weight:800; font-size:.88rem; line-height:1.4; border-bottom:2px solid var(--ink)}
+  .compare-table tbody th{font-family:"Newsreader", Georgia, serif; font-size:1.05rem; font-weight:700; color:var(--ink); white-space:nowrap}
+  .compare-table tbody tr td strong{color:var(--ink)}
+  @media (max-width: 760px){
+    .compare-table, .compare-table tbody, .compare-table tr, .compare-table th, .compare-table td{display:block; width:100%}
+    .compare-table thead{display:none}
+    .compare-table{border:none; margin-top:14px}
+    .compare-table tbody tr{border:1.5px solid var(--rule-soft); border-radius:16px; background:#fff; padding:6px 14px 10px; margin-bottom:14px}
+    .compare-table tbody th{border:none; padding:12px 0 6px; font-size:1.2rem}
+    .compare-table tbody td{border:none; border-top:1px solid var(--rule-soft); padding:9px 0}
+    .compare-table tbody td::before{content:attr(data-label); display:block; font-size:.72rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--purple); margin-bottom:3px}
+  }
 
   /* ---------- Food story (poster guide) ---------- */
-  .food-sec{margin-top:34px; border-top:2px solid var(--ink); padding-top:26px}
+  .food-sec{margin-top:38px; border-top:2px solid var(--ink); padding-top:28px; display:grid; gap:20px 30px}
   .food-sec h2{font-size:1.55rem; line-height:1.25}
-  .food-sec figure{margin:18px 0 0}
+  @media (min-width: 860px){
+    .food-sec{grid-template-columns:264px minmax(0,1fr)}
+    .food-sec h2{grid-column:1 / -1}
+  }
+  .food-sec figure{margin:0; max-width:340px}
+  @media (min-width: 860px){ .food-sec figure{max-width:none} }
   .food-sec figure img{width:100%; height:auto; border:1.5px solid var(--rule-soft); border-radius:16px}
   .food-sec figcaption{margin-top:10px; font-size:.9rem; color:var(--ink-faint)}
-  .food-list{list-style:none; margin:16px 0 0; padding:0; display:grid; gap:0 28px}
-  @media (min-width: 700px){ .food-list{grid-template-columns:1fr 1fr} }
-  .food-list li{display:flex; flex-wrap:wrap; gap:3px 12px; align-items:baseline; justify-content:space-between; border-top:1px solid var(--rule-soft); padding:9px 0; font-size:1rem; line-height:1.55}
-  .food-list .food-name{font-weight:700; color:var(--ink)}
-  .food-list .food-serving{color:var(--ink-faint); font-size:.92rem}
-  .food-list .food-carbs{font-weight:800; color:var(--purple); white-space:nowrap}
+  .food-sec .food-main{min-width:0}
+  .food-list{list-style:none; margin:0; padding:0}
+  .food-list li{display:grid; grid-template-columns:minmax(6em,1fr) minmax(0,auto) 5.2em; column-gap:14px; align-items:baseline; border-top:1px solid var(--rule-soft); padding:9px 0; font-size:1rem; line-height:1.5}
+  .food-list li:first-child{border-top:none; padding-top:2px}
+  .food-list .food-name{grid-column:1; font-weight:700; color:var(--ink)}
+  .food-list .food-serving{grid-column:2; color:var(--ink-faint); font-size:.92rem; text-align:right}
+  .food-list .food-carbs{grid-column:3; font-weight:800; color:var(--purple); white-space:nowrap; text-align:right}
   .food-note{margin-top:16px; border:1.5px solid var(--rule-soft); border-radius:16px; background:#fff; padding:16px 18px}
   .food-note p{font-size:.98rem; line-height:1.65; color:var(--ink-soft)}
   .food-note p + p{margin-top:8px}
   .food-note strong{color:var(--ink)}
+  .food-lead{margin:0 0 14px; font-size:.98rem; line-height:1.65; color:var(--ink-soft)}
+  .food-dl{margin-top:18px}
   .food-footer{margin-top:30px; border-top:2px solid var(--ink); padding-top:16px; font-size:.92rem; line-height:1.6; color:var(--ink-faint)}
   .write-note{
     margin-top:26px; border:1.5px solid var(--rule-soft); border-radius:20px; padding:26px 24px; background:#fff;
@@ -1103,6 +1130,85 @@
               <li><strong>Type 2 Diabetes:</strong> A metabolic condition where the body becomes resistant to insulin or doesn&rsquo;t produce enough.</li>
             </ol>
             <p>Understanding the difference helps eliminate stigma and ensures kids with T1D get the exact medical support and understanding they need at school and sports.</p>
+
+            <h2>How a healthy cell works</h2>
+            <ul class="points">
+              <li>You eat or drink, food breaks down into glucose.</li>
+              <li>The pancreas makes insulin from beta cells.</li>
+              <li>Insulin is the key and it turns easily.</li>
+              <li>The door opens and glucose goes in.</li>
+              <li>The cell makes energy.</li>
+            </ul>
+            <p><strong>Healthy result:</strong> insulin is made, the key turns easily, the door opens, and glucose becomes energy, not a pile-up in the blood.</p>
+
+            <h2>Gestational diabetes</h2>
+            <p>Gestational diabetes only develops during pregnancy. It is not Type 1 and it is not Type 2.</p>
+            <ul class="points">
+              <li>Pancreas still works, beta cells still make insulin and keys.</li>
+              <li>Placenta hormones make the key difficult to turn.</li>
+              <li>The cell door opens less, so blood sugar rises in pregnancy.</li>
+            </ul>
+            <p><strong>What happens:</strong> hormones from the placenta make the mother&rsquo;s insulin harder to use, a temporary form of insulin resistance, a bit like the stuck lock in Type 2.</p>
+            <p><strong>What is different:</strong> the immune system does NOT attack the beta cells, so it is not autoimmune like Type 1. It starts during pregnancy, mother and baby are monitored closely while she is pregnant, and blood sugar usually goes back to normal after the baby is born.</p>
+            <p><strong>Why it matters here:</strong> a pregnant adult with gestational diabetes is not a kid with Type 1. Different cause, different timing, different care, so please do not mix them up.</p>
+            <h3>Why gestational diabetes is easier than Type 1</h3>
+            <p>In gestational diabetes the key still exists, the pancreas still makes insulin (in fact it makes more during pregnancy), but placenta hormones make that key difficult to turn. In Type 1 there is no key at all: the beta cells are destroyed, so insulin must come from outside the body every day, for life.</p>
+            <p>Gestational diabetes is also temporary, when the baby and placenta are delivered the cause goes away and blood sugar usually returns to normal. That is why the effort is lower: often food choices, activity and blood-sugar checks for a few months, though some people need insulin. Type 1 never pauses and does not go away.</p>
+            <p><strong>Gestational in one line:</strong> the key is difficult to turn, placenta hormones make it stiff, and it usually ends after the baby is born.</p>
+
+            <h2>At a glance</h2>
+            <div class="glance-summary">
+              <p><strong>Healthy:</strong> key turns easily, door opens. <strong>Type 2:</strong> key turns halfway, then gets stuck. <strong>Type 1:</strong> no key at all, external insulin needed. <strong>Gestational:</strong> key is difficult to turn.</p>
+              <p>Same word, diabetes, four very different jobs.</p>
+            </div>
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th scope="col"><span class="sr-only">Type</span></th>
+                  <th scope="col">Is insulin made?</th>
+                  <th scope="col">Does the key work?</th>
+                  <th scope="col">What starts it?</th>
+                  <th scope="col">Effort to manage, and how disruptive it is</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Healthy</th>
+                  <td data-label="Is insulin made?">Yes</td>
+                  <td data-label="Does the key work?">Key turns easily, door opens</td>
+                  <td data-label="What starts it?">&ndash;</td>
+                  <td data-label="Effort to manage">None. Automatic, the pancreas does it all. No counting, no monitoring, no insulin.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Gestational</th>
+                  <td data-label="Is insulin made?">Yes</td>
+                  <td data-label="Does the key work?">Key is difficult to turn, placenta hormones</td>
+                  <td data-label="What starts it?">Placenta hormones in pregnancy</td>
+                  <td data-label="Effort to manage">Low to medium. Often managed with diet, activity and blood-sugar checks during pregnancy; some need insulin. Usually ends after birth.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Type 2</th>
+                  <td data-label="Is insulin made?">Yes, at first</td>
+                  <td data-label="Does the key work?">Key turns halfway, then gets stuck</td>
+                  <td data-label="What starts it?">Insulin resistance (metabolic)</td>
+                  <td data-label="Effort to manage">Medium to high. Lifelong, but often managed at first with food, activity and pills. Some people later need injections or insulin.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Type 1</th>
+                  <td data-label="Is insulin made?">Little or none</td>
+                  <td data-label="Does the key work?">No key at all, external insulin needed (pump or injections)</td>
+                  <td data-label="What starts it?">Autoimmune attack on beta cells</td>
+                  <td data-label="Effort to manage">Hardest, highest. Lifelong and extremely disruptive: insulin every day by pump or injections, CGM monitoring 24/7, carb counting at every meal, and daily ups and downs.</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>Understanding the difference helps eliminate stigma and ensures kids with Type 1 get the exact medical support and understanding they need at school and sports. Same word, diabetes, but different causes, so the support has to fit the condition.</p>
+            <p class="food-footer">AvivaCares.org&trade; 2026 | General info only, not medical advice | check your own care plan and talk to your diabetes team.</p>
+          </div>
+          <div class="handout">
+            <h3>Take this story with you</h3>
+            <p>Download the handout for this story — the healthy cell, gestational diabetes, and the at-a-glance comparison, all on the page to print or share.</p>
+            <a class="btn btn-solid" href="assets/type-1-vs-type-2-handout.pdf" download>Download the handout (PDF)</a>
           </div>
         </article>
         <nav class="page-nav" aria-label="Story navigation">
@@ -1122,6 +1228,7 @@
           <h1 id="story-4-heading" tabindex="-1">Top Foods and Carb Counting</h1>
           <div class="body">
             <p>Counting carbs is how I figure out my food. These are my handout posters — the foods I reach for, the ones I count carefully, and the treats I plan for. My rule is simple: <strong>count it, pair it with protein and vegetables, and check your CGM after.</strong></p>
+            <p>Values marked ~ are calculated estimates for a typical serving, not printed on the poster — check your own care plan.</p>
           </div>
 
           <div class="food-sec">
@@ -1130,26 +1237,30 @@
               <img src="assets/food-no-carb.jpg" alt="Handout poster titled &ldquo;No-Carb, About 0g&rdquo; showing photos of eggs, cheese, chicken, fish, cucumber, water, Sparkling Ice, sugar free jellos, hot dog, turkey slices, beef, bacon, spinach, green beans, mushrooms, olives, celery sticks and dill pickles" width="1408" height="1760" loading="lazy" />
               <figcaption>The No-Carb handout poster.</figcaption>
             </figure>
+            <div class="food-main">
+            <p class="food-lead">About 0g on the poster means these are foods Aviva usually doesn&rsquo;t count, but they aren&rsquo;t literally all zero. Real values per serving are below.</p>
             <ul class="food-list">
-              <li><span class="food-name">Eggs</span><span class="food-carbs">About 0g</span></li>
-              <li><span class="food-name">Cheese</span><span class="food-carbs">About 0g</span></li>
-              <li><span class="food-name">Chicken</span><span class="food-carbs">About 0g</span></li>
-              <li><span class="food-name">Fish</span><span class="food-carbs">About 0g</span></li>
-              <li><span class="food-name">Cucumber</span><span class="food-carbs">About 0g</span></li>
-              <li><span class="food-name">Water</span><span class="food-carbs">About 0g</span></li>
-              <li><span class="food-name">Sparkling Ice</span><span class="food-carbs">About 0g</span></li>
-              <li><span class="food-name">Sugar Free Jellos</span><span class="food-carbs">About 0g</span></li>
-              <li><span class="food-name">Hot Dog</span><span class="food-carbs">About 0g</span></li>
-              <li><span class="food-name">Turkey Slices</span><span class="food-carbs">About 0g</span></li>
-              <li><span class="food-name">Beef</span><span class="food-carbs">About 0g</span></li>
-              <li><span class="food-name">Bacon</span><span class="food-carbs">About 0g</span></li>
-              <li><span class="food-name">Spinach</span><span class="food-carbs">About 0g</span></li>
-              <li><span class="food-name">Green Beans</span><span class="food-carbs">About 0g</span></li>
-              <li><span class="food-name">Mushrooms</span><span class="food-carbs">About 0g</span></li>
-              <li><span class="food-name">Olives</span><span class="food-carbs">About 0g</span></li>
-              <li><span class="food-name">Celery Sticks</span><span class="food-carbs">About 0g</span></li>
-              <li><span class="food-name">Dill Pickles</span><span class="food-carbs">About 0g</span></li>
+              <li><span class="food-name">Eggs</span><span class="food-serving">1 Large</span><span class="food-carbs">~1g</span></li>
+              <li><span class="food-name">Cheese</span><span class="food-serving">1 oz</span><span class="food-carbs">~1g</span></li>
+              <li><span class="food-name">Chicken</span><span class="food-serving">3 oz</span><span class="food-carbs">0g</span></li>
+              <li><span class="food-name">Fish</span><span class="food-serving">3 oz</span><span class="food-carbs">0g</span></li>
+              <li><span class="food-name">Cucumber</span><span class="food-serving">1 Cup</span><span class="food-carbs">~4g</span></li>
+              <li><span class="food-name">Water</span><span class="food-serving">1 Glass</span><span class="food-carbs">0g</span></li>
+              <li><span class="food-name">Sparkling Ice</span><span class="food-serving">1 Can</span><span class="food-carbs">0g</span></li>
+              <li><span class="food-name">Sugar Free Jellos</span><span class="food-serving">1 Cup</span><span class="food-carbs">0g</span></li>
+              <li><span class="food-name">Hot Dog</span><span class="food-serving">1</span><span class="food-carbs">~2g</span></li>
+              <li><span class="food-name">Turkey Slices</span><span class="food-serving">2 oz</span><span class="food-carbs">~1g</span></li>
+              <li><span class="food-name">Beef</span><span class="food-serving">3 oz</span><span class="food-carbs">0g</span></li>
+              <li><span class="food-name">Bacon</span><span class="food-serving">2 Slices</span><span class="food-carbs">~0g</span></li>
+              <li><span class="food-name">Spinach</span><span class="food-serving">1 Cup</span><span class="food-carbs">~1g</span></li>
+              <li><span class="food-name">Green Beans</span><span class="food-serving">1 Cup</span><span class="food-carbs">~7g</span></li>
+              <li><span class="food-name">Mushrooms</span><span class="food-serving">1 Cup</span><span class="food-carbs">~2g</span></li>
+              <li><span class="food-name">Olives</span><span class="food-serving">10</span><span class="food-carbs">~1g</span></li>
+              <li><span class="food-name">Celery Sticks</span><span class="food-serving">1 Cup</span><span class="food-carbs">~3g</span></li>
+              <li><span class="food-name">Dill Pickles</span><span class="food-serving">1 Pickle</span><span class="food-carbs">~1g</span></li>
             </ul>
+            <p class="food-dl"><a class="btn btn-solid" href="assets/food-no-carb.pdf" download>Download poster (PDF)</a></p>
+            </div>
           </div>
 
           <div class="food-sec">
@@ -1158,16 +1269,17 @@
               <img src="assets/food-low-carb.jpg" alt="Handout poster titled &ldquo;Low-Carb&rdquo; showing photos of berries, nuts, celery with peanut butter, broccoli, sweet pickles, edamame, zucchini, avocado, asparagus, chicken satay, green curry, Greek yogurt, cauliflower rice, cottage cheese and veggie sausage, with carb counts" width="1408" height="1760" loading="lazy" />
               <figcaption>The Low-Carb handout poster.</figcaption>
             </figure>
+            <div class="food-main">
             <ul class="food-list">
-              <li><span class="food-name">Berries</span></li>
-              <li><span class="food-name">Nuts</span></li>
-              <li><span class="food-name">Celery with Peanut Butter</span></li>
-              <li><span class="food-name">Broccoli</span></li>
+              <li><span class="food-name">Berries</span><span class="food-serving">1 Cup</span><span class="food-carbs">~15g</span></li>
+              <li><span class="food-name">Nuts</span><span class="food-serving">1 oz</span><span class="food-carbs">~5g</span></li>
+              <li><span class="food-name">Celery with Peanut Butter</span><span class="food-serving">2 Stalks plus 1 Tbsp Peanut Butter</span><span class="food-carbs">~4g</span></li>
+              <li><span class="food-name">Broccoli</span><span class="food-serving">1 Cup</span><span class="food-carbs">~6g</span></li>
               <li><span class="food-name">Sweet Pickles</span><span class="food-serving">1 Pickle</span><span class="food-carbs">8g</span></li>
-              <li><span class="food-name">Edamame</span></li>
-              <li><span class="food-name">Zucchini</span></li>
-              <li><span class="food-name">Avocado</span></li>
-              <li><span class="food-name">Asparagus</span></li>
+              <li><span class="food-name">Edamame</span><span class="food-serving">1 Cup in Pods</span><span class="food-carbs">~9g</span></li>
+              <li><span class="food-name">Zucchini</span><span class="food-serving">1 Cup</span><span class="food-carbs">~4g</span></li>
+              <li><span class="food-name">Avocado</span><span class="food-serving">1 Medium</span><span class="food-carbs">~12g</span></li>
+              <li><span class="food-name">Asparagus</span><span class="food-serving">1 Cup</span><span class="food-carbs">~5g</span></li>
               <li><span class="food-name">Chicken Satay</span><span class="food-serving">2 Skewers plus 1 Tbsp Peanut Sauce</span><span class="food-carbs">8g</span></li>
               <li><span class="food-name">Green Curry</span><span class="food-serving">1 Cup</span><span class="food-carbs">14g</span></li>
               <li><span class="food-name">Greek Yogurt Plain</span><span class="food-serving">3/4 Cup</span><span class="food-carbs">6g</span></li>
@@ -1175,6 +1287,8 @@
               <li><span class="food-name">Cottage Cheese</span><span class="food-serving">1/2 Cup</span><span class="food-carbs">3g</span></li>
               <li><span class="food-name">Veggie Sausage</span><span class="food-serving">1 Patty</span><span class="food-carbs">3g</span></li>
             </ul>
+            <p class="food-dl"><a class="btn btn-solid" href="assets/food-low-carb.pdf" download>Download poster (PDF)</a></p>
+            </div>
           </div>
 
           <div class="food-sec">
@@ -1183,6 +1297,7 @@
               <img src="assets/food-fruits.jpg" alt="Handout poster titled &ldquo;Fruits&rdquo; showing photos of an apple, an orange, a banana, a gold kiwi, pomegranate and papaya, with carb counts" width="1408" height="1760" loading="lazy" />
               <figcaption>The Fruits handout poster.</figcaption>
             </figure>
+            <div class="food-main">
             <ul class="food-list">
               <li><span class="food-name">Apple</span><span class="food-serving">1 Medium</span><span class="food-carbs">25g</span></li>
               <li><span class="food-name">Orange</span><span class="food-serving">1 Medium</span><span class="food-carbs">15g</span></li>
@@ -1194,14 +1309,17 @@
             <div class="food-note">
               <p><strong>Enjoy in moderation</strong> — Count it and pair it with protein.</p>
             </div>
+            <p class="food-dl"><a class="btn btn-solid" href="assets/food-fruits.pdf" download>Download poster (PDF)</a></p>
+            </div>
           </div>
 
           <div class="food-sec">
-            <h2>Heavy Carbs | Pair It Wisely</h2>
+            <h2>Heavy Carbs — Pair It Wisely</h2>
             <figure>
               <img src="assets/food-heavy-carbs.jpg" alt="Handout poster titled &ldquo;Heavy Carbs | Pair It Wisely&rdquo; showing photos of a muffin, white rice, pasta, cold cereals with milk, Kodiak protein pancakes and Quaker oats, with carb counts" width="1408" height="1760" loading="lazy" />
               <figcaption>The Heavy Carbs handout poster.</figcaption>
             </figure>
+            <div class="food-main">
             <ul class="food-list">
               <li><span class="food-name">Muffin</span><span class="food-serving">1 Large</span><span class="food-carbs">45g</span></li>
               <li><span class="food-name">White Rice</span><span class="food-serving">1 Cup</span><span class="food-carbs">45g</span></li>
@@ -1216,24 +1334,27 @@
               <p><strong>Vegetables:</strong> Spinach, Green Beans, Mushrooms, Salad, Lettuce, Cucumber, Olives.</p>
               <p><strong>Drink:</strong> Coconut Milk, Soymilk, Fairlife Milk.</p>
             </div>
+            <p class="food-dl"><a class="btn btn-solid" href="assets/food-heavy-carbs.pdf" download>Download poster (PDF)</a></p>
+            </div>
           </div>
 
           <div class="food-sec">
-            <h2>Processed Carbs | Time It Right</h2>
+            <h2>Processed Carbs — Time It Right</h2>
             <figure>
               <img src="assets/food-processed-carbs.jpg" alt="Handout poster titled &ldquo;Processed Carbs | Time It Right&rdquo; showing photos of French fries, a bagel and an Auntie Annes cinnamon sugar pretzel, with carb counts" width="1408" height="1760" loading="lazy" />
               <figcaption>The Processed Carbs handout poster.</figcaption>
             </figure>
-            <div class="food-note">
-              <p><strong>Avoid — fast spikes and crashes</strong></p>
-            </div>
+            <div class="food-main">
             <ul class="food-list">
               <li><span class="food-name">French Fries</span><span class="food-serving">Large</span><span class="food-carbs">60g</span></li>
               <li><span class="food-name">Bagel</span><span class="food-carbs">60g</span></li>
               <li><span class="food-name">Auntie Annes Cinnamon Sugar Pretzel</span><span class="food-carbs">85g</span></li>
             </ul>
             <div class="food-note">
+              <p><strong>Avoid — fast spikes and crashes</strong></p>
               <p><strong>Plan ahead and monitor — Time it right</strong> — Count it, pair it with protein and vegetables, and check your CGM after.</p>
+            </div>
+            <p class="food-dl"><a class="btn btn-solid" href="assets/food-processed-carbs.pdf" download>Download poster (PDF)</a></p>
             </div>
           </div>
 
@@ -1243,6 +1364,7 @@
               <img src="assets/food-treats.jpg" alt="Handout poster titled &ldquo;Treats in Moderation&rdquo; showing photos of ice cream, a donut, a cookie, chocolate cake, a mini cupcake, a croissant, pizza, an English muffin, toast with fruit spread and French toast, with carb counts" width="1408" height="1760" loading="lazy" />
               <figcaption>The Treats in Moderation handout poster.</figcaption>
             </figure>
+            <div class="food-main">
             <ul class="food-list">
               <li><span class="food-name">Cold Stone OREO Creme</span><span class="food-serving">Kids Size Cup</span><span class="food-carbs">25g</span></li>
               <li><span class="food-name">Ben and Jerrys Cherry Garcia</span><span class="food-serving">Half Cup</span><span class="food-carbs">25g</span></li>
@@ -1257,17 +1379,17 @@
               <li><span class="food-name">Toast with Fruit Spread</span><span class="food-serving">1 Slice plus 1 Tbsp</span><span class="food-carbs">28g</span></li>
               <li><span class="food-name">French Toast with Powdered Sugar</span><span class="food-serving">1 Slice</span><span class="food-carbs">33g</span></li>
             </ul>
+            <p class="food-dl"><a class="btn btn-solid" href="assets/food-treats.pdf" download>Download poster (PDF)</a></p>
+            </div>
           </div>
 
           <div class="food-sec">
-            <h2>Sugary Liquids | Fast Carbs</h2>
+            <h2>Sugary Liquids — Fast Carbs</h2>
             <figure>
               <img src="assets/food-sugary-liquids.jpg" alt="Handout poster titled &ldquo;Sugary Liquids | Fast Carbs&rdquo; showing photos of boba tea, a caramel frappuccino, orange juice, mango lassi and maple syrup, with carb counts" width="1408" height="1760" loading="lazy" />
               <figcaption>The Sugary Liquids handout poster.</figcaption>
             </figure>
-            <div class="food-note">
-              <p><strong>Plan ahead and monitor — fast spikes and crashes</strong></p>
-            </div>
+            <div class="food-main">
             <ul class="food-list">
               <li><span class="food-name">Boba Tea</span><span class="food-serving">Large</span><span class="food-carbs">110g</span></li>
               <li><span class="food-name">Caramel Frappuccino</span><span class="food-serving">Grande</span><span class="food-carbs">73g</span></li>
@@ -1276,9 +1398,12 @@
               <li><span class="food-name">Maple Syrup</span><span class="food-serving">1/4 Cup</span><span class="food-carbs">52g</span></li>
             </ul>
             <div class="food-note">
+              <p><strong>Plan ahead and monitor — fast spikes and crashes</strong></p>
               <p><strong>For lows</strong> — I drink these before karate, for lows, or swim practice.</p>
               <p><strong>Drink this instead</strong> — Water, Sparkling Ice, Coconut Milk, Soymilk, Fairlife Milk.</p>
               <p><strong>If you drink it, count it</strong> — 1 Large Boba = 110g, about 2 meals of carbs.</p>
+            </div>
+            <p class="food-dl"><a class="btn btn-solid" href="assets/food-sugary-liquids.pdf" download>Download poster (PDF)</a></p>
             </div>
           </div>
 
