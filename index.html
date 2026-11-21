@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light" />
 <meta name="description" content="Aviva Cares — Aviva's own site about living with Type 1 Diabetes: her stories, school tips, and fundraising for Breakthrough T1D." />
-<link rel="icon" href="data:," />
+<link rel="icon" type="image/png" href="assets/lotus-logo.png" />
 <title>Aviva Cares — Home</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,9 +18,10 @@
     --ink-faint:#595959;
     --rule:#000000;
     --rule-soft:#d9d9d9;
-    --purple:#5b21b6;
-    --yellow:#ffd21f;
-    --focus:#5b21b6;
+    --purple:#431756;
+    --pink:#f2c1d6;
+    --pink-soft:#fee9f0;
+    --focus:#431756;
   }
   *{box-sizing:border-box}
   @media (prefers-reduced-motion: reduce){
@@ -36,7 +37,7 @@
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
   }
-  ::selection{background:var(--yellow); color:var(--ink)}
+  ::selection{background:var(--pink); color:var(--ink)}
   h1,h2,h3{font-family:"Newsreader", Georgia, "Times New Roman", serif; line-height:1.12; color:var(--ink); margin:0; font-weight:700}
   p{margin:0}
   a{color:var(--purple); text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1.5px}
@@ -50,7 +51,7 @@
   }
   .skip-link:focus{top:0; color:#fff}
   .ext{font-size:.82em; font-weight:800; text-decoration:none}
-  .hl{background:none; padding:0; text-decoration:underline; text-decoration-color:var(--yellow); text-decoration-thickness:.18em; text-underline-offset:.14em; text-decoration-skip-ink:none}
+  .hl{background:none; padding:0; text-decoration:underline; text-decoration-color:var(--pink); text-decoration-thickness:.18em; text-underline-offset:.14em; text-decoration-skip-ink:none}
 
   /* ---------- Layout ---------- */
   .layout{display:block}
@@ -66,11 +67,12 @@
     padding:10px 16px;
   }
   .topbar .brand-mini{font-family:"Newsreader", Georgia, serif; font-weight:800; font-size:1.35rem; color:#fff; text-decoration:none; min-height:44px; display:flex; align-items:center}
-  .topbar .brand-mini em{color:#fff; font-style:italic; text-decoration:underline; text-decoration-color:var(--yellow); text-decoration-thickness:3px; text-underline-offset:4px}
+  .topbar .brand-mini .brand-mini-logo{width:34px; height:auto; flex:none; margin-right:9px}
+  .topbar .brand-mini em{color:#fff; font-style:italic; text-decoration:underline; text-decoration-color:var(--pink); text-decoration-thickness:3px; text-underline-offset:4px}
   .menu-btn{
     display:inline-flex; align-items:center; gap:8px;
     min-height:44px; padding:9px 18px;
-    background:var(--yellow); color:var(--ink); border:none;
+    background:var(--pink); color:var(--ink); border:none;
     border-radius:999px; font:inherit; font-size:.95rem; font-weight:800; cursor:pointer;
   }
   .menu-btn:hover{background:#fff}
@@ -99,18 +101,19 @@
     .scrim{display:none}
   }
   .sidebar-inner{padding:18px 18px 14px; display:flex; flex-direction:column; height:100%; min-height:0; position:relative}
-  .brand{display:block; text-decoration:none; color:#fff; padding-bottom:10px; text-align:left}
+  .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:#fff; padding-bottom:10px; text-align:left}
+  .brand .brand-logo{width:54px; height:auto; flex:none}
+  .brand .brand-text{display:block; min-width:0}
   .brand:hover{color:#fff}
   .brand-name{font-family:"Newsreader", Georgia, serif; font-size:1.8rem; font-weight:800; line-height:1.05; color:#fff; display:block}
-  .brand-name em{font-style:italic; font-weight:600; color:#fff; text-decoration:underline; text-decoration-color:var(--purple); text-decoration-thickness:4px; text-underline-offset:5px}
+  .brand-name em{font-style:italic; font-weight:600; color:#fff; text-decoration:underline; text-decoration-color:var(--pink); text-decoration-thickness:4px; text-underline-offset:5px}
   .brand-sub{display:inline-block; margin-top:8px; background:var(--purple); color:#fff; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; font-weight:800; padding:4px 10px; border-radius:999px; line-height:1.4}
-  .brand-domain{display:block; margin-top:6px; font-size:.88rem; color:#e8e8e8; text-decoration:underline; text-underline-offset:3px}
   .close-btn{display:none}
   @media (max-width: 1023.98px){
     .close-btn{
       display:inline-flex; align-items:center; justify-content:center;
       position:absolute; top:14px; right:14px; width:44px; height:44px;
-      background:var(--yellow); color:var(--ink); border:none;
+      background:var(--pink); color:var(--ink); border:none;
       border-radius:999px; cursor:pointer; font-size:1.3rem; line-height:1; font-weight:800;
     }
   }
@@ -131,13 +134,13 @@
   .nav-link .nav-title .arr{color:#fff; font-family:"Libre Franklin", sans-serif; font-weight:800; text-decoration:none; flex:none}
   .nav-link:hover{background:var(--purple); border-color:var(--purple)}
   .nav-link.active{background:var(--purple); border-color:#ffffff}
-  .nav-link.active .nav-title .nav-name{text-decoration-color:var(--yellow)}
+  .nav-link.active .nav-title .nav-name{text-decoration-color:var(--pink)}
   .nav-cta{
     display:flex; flex-direction:column; align-items:stretch; justify-content:center;
     width:100%; margin:2px 0 0; padding:10px 12px;
     text-align:left; text-decoration:none;
-    background:var(--yellow); color:var(--ink) !important;
-    border:1.5px solid var(--yellow);
+    background:var(--pink); color:var(--ink) !important;
+    border:1.5px solid var(--pink);
     border-radius:12px;
   }
   .nav-cta:hover{background:#fff; color:var(--ink) !important}
@@ -145,8 +148,8 @@
   .nav-cta.active{border-color:var(--purple)}
   .sidebar-foot{padding-top:11px; margin-top:11px; border-top:1px solid rgba(255,255,255,.18); text-align:left}
   .sidebar-foot p{font-size:.82rem; color:#e8e8e8; line-height:1.5}
-  .sidebar-foot a{color:#fff; font-weight:700; text-decoration-color:var(--yellow); text-decoration-thickness:2px}
-  .sidebar-foot a:hover{color:var(--yellow)}
+  .sidebar-foot a{color:#fff; font-weight:700; text-decoration-color:var(--pink); text-decoration-thickness:2px}
+  .sidebar-foot a:hover{color:var(--pink)}
 
   /* ---------- Short viewports: tighten the sidebar so the whole nav
        (brand, all seven items, footer links) fits one screen height
@@ -156,7 +159,6 @@
     .brand{padding-bottom:8px}
     .brand-name{font-size:1.55rem}
     .brand-sub{margin-top:6px}
-    .brand-domain{margin-top:4px; font-size:.82rem}
     nav.main-nav ul{gap:5px}
     .nav-link{padding:7px 11px}
     .nav-link .nav-title{font-size:.98rem}
@@ -169,7 +171,6 @@
     .sidebar-inner{padding:10px 14px 8px}
     .brand-name{font-size:1.35rem}
     .brand-sub{margin-top:4px; padding:2px 8px; font-size:.62rem}
-    .brand-domain{margin-top:2px; font-size:.78rem}
     nav.main-nav ul{gap:4px}
     .nav-link{padding:5px 10px; border-radius:10px}
     .nav-cta{padding:6px 10px; border-radius:10px}
@@ -186,20 +187,33 @@
   .page [tabindex="-1"]:focus{outline:none}
 
   /* ---------- Shared bits ---------- */
-  .eyebrow{
-    display:inline-block; font-size:.74rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
-    color:var(--purple); background:#fff; border:1px solid var(--rule-soft);
-    padding:5px 12px; border-radius:999px; line-height:1.4;
-  }
-  /* Home hero intro line — larger and more prominent than a standard eyebrow, plain text (no bubble/pill) */
-  .eyebrow.hero-intro{
+  /* Page heading line on every page — matches the Home hero heading
+     ("AvivaCares is on a mission..."): Newsreader serif, same size and
+     weight, plain text, no bubble/pill/background treatment. */
+  .eyebrow, .eyebrow.hero-intro{
     display:block;
     font-family:"Newsreader", Georgia, serif;
     font-size:clamp(1.3rem, 1.05rem + 1.4vw, 1.75rem);
     font-weight:700; letter-spacing:0; text-transform:none;
     line-height:1.3; padding:0; max-width:100%;
+    color:var(--purple);
     background:none; border:none; border-radius:0;
   }
+  /* Top line of every page: the lotus mark beside the page's heading line */
+  .page-top{display:flex; align-items:flex-start; gap:14px}
+  .page-top .page-lotus{width:52px; height:auto; flex:none}
+  .page-top .eyebrow{flex:1 1 auto; min-width:0}
+  .hero-meta .page-lotus{width:52px; height:auto; flex:none}
+  .hero-meta .eyebrow{flex:1 1 auto; min-width:0}
+  @media (max-width: 560px){
+    .page-top .page-lotus, .hero-meta .page-lotus{width:42px}
+  }
+  .sec-head h1 em{color:var(--purple); font-style:italic; font-weight:600}
+  /* Story pages: heading block sits above the article card, plain like every other page */
+  .story-head{margin-bottom:26px}
+  .story-head h1{font-size:2.05rem; font-weight:700; margin-top:12px; line-height:1.15; max-width:22em}
+  @media (min-width: 700px){ .story-head h1{font-size:2.6rem} }
+  .story-head .post-date{display:block; margin-top:10px}
   .sec-head{margin-bottom:30px}
   .sec-head h1, .sec-head h2{font-size:2.05rem; font-weight:700; margin-top:14px; max-width:16em}
   @media (min-width: 700px){ .sec-head h1, .sec-head h2{font-size:2.6rem} }
@@ -212,11 +226,11 @@
   .btn:hover{background:var(--ink); color:#fff}
   .btn-solid{background:var(--purple); border-color:var(--purple); color:#fff}
   .btn-solid:hover{background:var(--ink); border-color:var(--ink); color:#fff}
-  .btn-donate{background:var(--yellow); border-color:var(--ink); color:var(--ink)}
+  .btn-donate{background:var(--pink); border-color:var(--ink); color:var(--ink)}
   .btn-donate:hover{background:var(--purple); border-color:var(--purple); color:#fff}
   .btn-ink{background:var(--ink); border-color:var(--ink); color:#fff}
   .btn-ink:hover{background:var(--purple); border-color:var(--purple); color:#fff}
-  .btn-lav{background:var(--yellow); border-color:var(--yellow); color:var(--ink)}
+  .btn-lav{background:var(--pink); border-color:var(--pink); color:var(--ink)}
   .btn-lav:hover{background:#fff; border-color:#fff; color:var(--ink)}
   figcaption{font-size:.92rem; line-height:1.6; color:var(--ink-soft)}
   figcaption .cap-date{display:block; margin-top:3px; font-size:.78rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--purple)}
@@ -232,10 +246,9 @@
     padding:28px 22px 30px;
   }
   @media (min-width: 700px){ .hero-card{padding:38px 36px 40px} }
-  .hero-meta{display:flex; flex-wrap:wrap; gap:8px 14px; justify-content:space-between; align-items:center}
-  .hero-meta .where{font-size:.8rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint)}
+  .hero-meta{display:flex; flex-wrap:nowrap; gap:14px; justify-content:flex-start; align-items:flex-start}
   .hero-card h1{
-    font-size:1.6rem; font-weight:800; line-height:1.15; letter-spacing:-.01em;
+    font-size:1.6rem; font-weight:700; line-height:1.15; letter-spacing:-.01em;
     margin-top:20px; max-width:16em;
   }
   @media (min-width: 700px){ .hero-card h1{font-size:2.15rem} }
@@ -318,6 +331,17 @@
   blockquote.pull footer a{color:var(--purple)}
   .celebrate{margin-top:36px}
   .celebrate h3{font-size:1.4rem}
+  .about-logo{margin-top:36px; display:flex; gap:22px; align-items:flex-start}
+  .about-logo img{width:110px; height:auto; flex:none}
+  .about-logo h3{font-size:1.4rem}
+  .about-logo p{margin-top:8px; color:var(--ink-soft); line-height:1.65; max-width:42em}
+  @media (max-width: 560px){ .about-logo{gap:16px} .about-logo img{width:82px} }
+  .about-logo-row{margin-top:36px; display:grid; gap:24px; align-items:start}
+  .about-logo-row .about-logo{margin-top:0}
+  @media (min-width: 760px){ .about-logo-row{grid-template-columns:1fr 1fr; gap:28px} }
+  .about-logo-photo{margin:0}
+  .about-logo-photo img{width:100%; height:auto; border-radius:16px}
+  .about-logo-photo figcaption{border-top:2px solid var(--purple); padding-top:10px; margin-top:12px; max-width:30em}
   .about-photos{margin-top:38px}
   .about-photos h3{font-size:1.4rem; margin-bottom:20px}
   .celebrate p{margin-top:8px; color:var(--ink-soft); line-height:1.65; max-width:42em}
@@ -351,13 +375,7 @@
   /* ---------- Fundraiser ---------- */
   .fund{background:var(--ink); border-radius:24px; padding:30px 24px 34px; color:#fff}
   @media (min-width: 700px){ .fund{padding:38px 36px 42px} }
-  .fund h1{font-size:2.05rem; font-weight:700; margin-top:14px; max-width:16em; color:#fff}
-  @media (min-width: 700px){ .fund h1{font-size:2.6rem} }
-  .fund h1 em{color:#fff; font-style:italic; font-weight:600; text-decoration:underline; text-decoration-color:var(--purple); text-decoration-thickness:4px; text-underline-offset:6px}
-  .fund .eyebrow{background:var(--ink); color:#fff; border-color:rgba(255,255,255,.4)}
-  .fund .intro{margin-top:14px; color:#e8e8e8; font-size:1.06rem; line-height:1.68; max-width:38em}
-  .fund .intro strong{color:#fff}
-  .fund-years{margin-top:22px; display:flex; flex-wrap:wrap; gap:10px; align-items:stretch}
+  .fund-years{margin-top:0; display:flex; flex-wrap:wrap; gap:10px; align-items:stretch}
   .fund-years .stat{background:rgba(255,255,255,.09); border:1.5px solid rgba(255,255,255,.2); border-radius:14px; padding:14px 18px}
   .fund-years .stat .big{display:block; font-family:"Newsreader", Georgia, serif; font-size:1.7rem; font-weight:800; color:#fff; line-height:1.1}
   .fund-years .stat .small{display:block; margin-top:3px; font-size:.84rem; color:#e8e8e8; line-height:1.45; max-width:15em}
@@ -393,7 +411,7 @@
   .post{border:1.5px solid var(--rule-soft); border-radius:20px; padding:28px 24px; background:#fff}
   @media (min-width: 700px){ .post{padding:32px 30px} }
   .post-meta{display:flex; flex-wrap:wrap; gap:6px 20px; align-items:baseline; justify-content:space-between}
-  .post-cat{font-size:.74rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; color:var(--purple); background:#fff; border:1px solid var(--rule-soft); padding:4px 11px; border-radius:999px}
+  .post-cat{font-size:.74rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; color:var(--purple); background:var(--pink-soft); border:1px solid var(--rule-soft); padding:4px 11px; border-radius:999px}
   .post-no{font-family:"Newsreader", Georgia, serif; font-style:italic; font-size:1rem; color:var(--ink-faint)}
   .post h1{font-size:1.85rem; font-weight:700; margin-top:14px; line-height:1.2; max-width:22em}
   @media (min-width: 700px){ .post h1{font-size:2.2rem} }
@@ -410,7 +428,7 @@
   .post .body h2{font-size:1.4rem; line-height:1.25; margin-top:12px}
   .post ul.points{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px}
   .post ul.points li{font-size:1.05rem; line-height:1.7; padding-left:22px; position:relative}
-  .post ul.points li::before{content:""; position:absolute; left:0; top:.6em; width:8px; height:8px; background:var(--yellow); border:1.5px solid var(--ink); border-radius:50%}
+  .post ul.points li::before{content:""; position:absolute; left:0; top:.6em; width:8px; height:8px; background:var(--pink); border:1.5px solid var(--ink); border-radius:50%}
   .post ul.famous{list-style:none; margin:0; padding:0; display:grid; gap:4px 28px}
   @media (min-width: 700px){ .post ul.famous{grid-template-columns:1fr 1fr} }
   .post ul.famous li{font-size:1.02rem; line-height:1.6; border-top:1px solid var(--rule-soft); padding:9px 0}
@@ -495,6 +513,7 @@
   footer.site-foot a{font-weight:700}
   footer.site-foot p + p{margin-top:9px}
   footer.site-foot .foot-brand{font-family:"Newsreader", Georgia, serif; font-size:1.1rem; color:var(--ink)}
+  footer.site-foot .foot-logo{display:inline-block; width:36px; height:auto; vertical-align:middle; margin-right:9px}
   footer.site-foot nav.foot-nav{margin-top:12px; display:flex; flex-wrap:wrap; gap:6px 18px}
 </style>
 </head>
@@ -502,7 +521,7 @@
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <div class="topbar">
-  <a class="brand-mini" href="#/home">Aviva <em>Cares</em></a>
+  <a class="brand-mini" href="#/home"><img class="brand-mini-logo" src="assets/lotus-logo.png" alt="" width="185" height="149" />Aviva <em>Cares</em></a>
   <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="sidebar" aria-label="Open navigation menu">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     Menu
@@ -516,8 +535,10 @@
     <div class="sidebar-inner">
       <button class="close-btn" id="closeBtn" type="button" aria-label="Close navigation menu">&times;</button>
       <a class="brand" href="#/home">
-        <span class="brand-name">Aviva <em>Cares</em></span>
-        <span class="brand-domain">avivacares.org</span>
+        <img class="brand-logo" src="assets/lotus-logo.png" alt="" width="185" height="149" />
+        <span class="brand-text">
+          <span class="brand-name">Aviva <em>Cares</em></span>
+        </span>
       </a>
 
       <nav class="main-nav" aria-label="Main">
@@ -576,8 +597,8 @@
       <section class="page" data-page="home" aria-labelledby="home-heading">
         <div class="hero-card">
           <div class="hero-meta">
+            <img class="page-lotus" src="assets/lotus-logo.png" alt="" width="185" height="149" />
             <p class="eyebrow hero-intro">AvivaCares is on a mission to raise mental health and disability awareness in the PNW.</p>
-            <p class="where">avivacares.org</p>
           </div>
           <h1 id="home-heading" tabindex="-1">First, I&rsquo;m a kid. <em>Then</em> there&rsquo;s <span class="hl">Type 1 Diabetes.</span></h1>
 
@@ -720,7 +741,10 @@
       <!-- ================= PAGE: ABOUT ================= -->
       <section class="page" data-page="about" aria-labelledby="about-heading">
         <div class="sec-head">
-          <p class="eyebrow hero-intro">About Aviva</p>
+          <div class="page-top">
+            <img class="page-lotus" src="assets/lotus-logo.png" alt="" width="185" height="149" />
+            <p class="eyebrow hero-intro">About Aviva</p>
+          </div>
           <h1 id="about-heading" tabindex="-1">A student, an advocate, and a kid first</h1>
           <p class="intro">My story starts with the things I love doing. Type 1 Diabetes is part of it, an important part, but it comes second.</p>
         </div>
@@ -745,6 +769,19 @@
         <div class="celebrate">
           <h3>My diaversary is a celebration</h3>
           <p>Every year, we mark my <strong>diaversary</strong>, the anniversary of my diagnosis, not as a sad date, but as a celebration: another year of doing hard things, learning my body, and living without limits. Resilience is worth celebrating.</p>
+        </div>
+        <div class="about-logo-row">
+          <div class="about-logo">
+            <img src="assets/lotus-logo.png" alt="The Aviva Cares lotus logo: layered pink and purple petals, the same mark printed on Aviva's food posters" width="185" height="149" />
+            <div>
+              <h3>About the logo</h3>
+              <p>The lotus is a symbol of resilience. It grows up through muddy water and still blooms clean and bright, a lot like living with T1D: hard days and extra work, and still blooming. It is personal, too. My dad&rsquo;s name, Aravind, means lotus, and he has been my support through my whole T1D journey.</p>
+            </div>
+          </div>
+          <figure class="about-logo-photo">
+            <img src="assets/aviva-aravind-halloween.jpg" alt="Aviva in a Halloween costume holding a wand, standing in a hallway with her dad Aravind in a costume with a white curly wig and purple cape" width="800" height="1060" loading="lazy" />
+            <figcaption>Aviva and her dad, Aravind, at Halloween.</figcaption>
+          </figure>
         </div>
         <div class="about-photos">
           <h3>Aviva in pictures</h3>
@@ -827,7 +864,10 @@
       <!-- ================= PAGE: PHOTOS ================= -->
       <section class="page" data-page="photos" aria-labelledby="photos-heading">
         <div class="sec-head">
-          <p class="eyebrow">Photographs</p>
+          <div class="page-top">
+            <img class="page-lotus" src="assets/lotus-logo.png" alt="" width="185" height="149" />
+            <p class="eyebrow">Photographs</p>
+          </div>
           <h1 id="photos-heading" tabindex="-1">From <a href="https://www.instagram.com/avivacares/" target="_blank" rel="noopener">@avivacares <span class="ext" aria-hidden="true">&nearr;</span></a></h1>
           <p class="intro">The first photograph is from 2023, a hospital bed at Seattle Children&rsquo;s, and a plate of pancakes. After that come a photoshoot, school duty, runways and a zipline in Maui. All of it in Aviva&rsquo;s own words, from her Instagram.</p>
         </div>
@@ -907,10 +947,15 @@
 
       <!-- ================= PAGE: FUNDRAISER ================= -->
       <section class="page" data-page="fundraiser" aria-labelledby="fundraiser-heading">
-        <div class="fund">
-          <p class="eyebrow">Breakthrough T1D Fundraiser</p>
+        <div class="sec-head">
+          <div class="page-top">
+            <img class="page-lotus" src="assets/lotus-logo.png" alt="" width="185" height="149" />
+            <p class="eyebrow">Breakthrough T1D Fundraiser</p>
+          </div>
           <h1 id="fundraiser-heading" tabindex="-1">Help fund the research that <em>changes lives</em></h1>
           <p class="intro">I&rsquo;m Aviva, and I fundraise for <strong>Breakthrough T1D</strong>, the leading global organisation funding Type 1 Diabetes research. I do it because I live this every day, the checks, the alarms, the balancing, and because every gift helps drive progress toward better treatments, and ultimately cures, for every kid like me.</p>
+        </div>
+        <div class="fund">
           <div class="fund-years" aria-label="Why Aviva fundraises">
             <div class="stat"><span class="big">Every day</span><span class="small">of checking, balancing and carrying on — that&rsquo;s what your gift lightens</span></div>
             <div class="stat"><span class="big">One team</span><span class="small">Aviva, her family, her school and her community, raising voices together</span></div>
@@ -944,7 +989,10 @@
       <!-- ================= PAGE: RESEARCH ================= -->
       <section class="page" data-page="research" aria-labelledby="research-heading">
         <div class="sec-head">
-          <p class="eyebrow">Research</p>
+          <div class="page-top">
+            <img class="page-lotus" src="assets/lotus-logo.png" alt="" width="185" height="149" />
+            <p class="eyebrow">Research</p>
+          </div>
           <h1 id="research-heading" tabindex="-1">Research runs in my family</h1>
           <p class="intro">Science improves the technology that helps people keep track of our bodies every day. AvivaCares partners with ImagineQ Labs to publish research on biosignals, and how they can be used to detect stress, burn-out, or even hypoglycemia (low blood sugar).</p>
         </div>
@@ -970,7 +1018,10 @@
       <!-- ================= PAGE: T1D 101 FOR SCHOOLS & FRIENDS (STORIES INDEX) ================= -->
       <section class="page" data-page="stories" aria-labelledby="stories-heading">
         <div class="sec-head">
-          <p class="eyebrow">T1D 101 for Schools &amp; Friends</p>
+          <div class="page-top">
+            <img class="page-lotus" src="assets/lotus-logo.png" alt="" width="185" height="149" />
+            <p class="eyebrow">T1D 101 for Schools &amp; Friends</p>
+          </div>
           <h1 id="stories-heading" tabindex="-1">My story, in my words</h1>
           <p class="intro">Stories, practical checklists and advocacy tips from my journey, starting with these first posts. Each one opens on its own page.</p>
         </div>
@@ -1028,12 +1079,15 @@
       <!-- ================= PAGE: STORY 1 ================= -->
       <section class="page" data-page="story-1" aria-labelledby="story-1-heading">
         <a class="back-link" href="#/stories">&larr; Back to all stories</a>
-        <article class="post">
-          <div class="post-meta">
-            <span class="post-cat">Personal Story &amp; Mission</span>
-            <span class="post-date">September 2025</span>
+        <div class="story-head">
+          <div class="page-top">
+            <img class="page-lotus" src="assets/lotus-logo.png" alt="" width="185" height="149" />
+            <p class="eyebrow">Personal Story &amp; Mission</p>
           </div>
           <h1 id="story-1-heading" tabindex="-1">All About My Type 1 Diabetes</h1>
+          <span class="post-date">September 2025</span>
+        </div>
+        <article class="post">
           <div class="body">
             <p>Hi! I&rsquo;m Aviva. I enjoy zip-lining, traveling, singing, and reading about superheroes. I have Type 1 Diabetes. My body is awesome, but it needs a little help.</p>
 
@@ -1106,12 +1160,15 @@
       <!-- ================= PAGE: STORY 2 ================= -->
       <section class="page" data-page="story-2" aria-labelledby="story-2-heading">
         <a class="back-link" href="#/stories">&larr; Back to all stories</a>
-        <article class="post">
-          <div class="post-meta">
-            <span class="post-cat">School Advocacy &amp; Peer Awareness</span>
-            <span class="post-date">September 2024</span>
+        <div class="story-head">
+          <div class="page-top">
+            <img class="page-lotus" src="assets/lotus-logo.png" alt="" width="185" height="149" />
+            <p class="eyebrow">School Advocacy &amp; Peer Awareness</p>
           </div>
           <h1 id="story-2-heading" tabindex="-1">What That Beep Means — A Guide to CGM Alarms in the Classroom</h1>
+          <span class="post-date">September 2024</span>
+        </div>
+        <article class="post">
           <div class="body">
             <p>If you hear a high-pitched tune or a repeated buzz from my desk or backpack, don&rsquo;t worry — I&rsquo;m not playing a game on my phone! That sound comes from my Continuous Glucose Monitor (CGM). It measures my blood sugar continuously and alerts me if my levels are going too high or dropping low.</p>
             <ul class="alarm">
@@ -1159,12 +1216,15 @@
       <!-- ================= PAGE: STORY 3 ================= -->
       <section class="page" data-page="story-3" aria-labelledby="story-3-heading">
         <a class="back-link" href="#/stories">&larr; Back to all stories</a>
-        <article class="post">
-          <div class="post-meta">
-            <span class="post-cat">T1D Education</span>
-            <span class="post-date">June 2024</span>
+        <div class="story-head">
+          <div class="page-top">
+            <img class="page-lotus" src="assets/lotus-logo.png" alt="" width="185" height="149" />
+            <p class="eyebrow">T1D Education</p>
           </div>
           <h1 id="story-3-heading" tabindex="-1">Type 1 vs. Type 2 Diabetes — Busting the Biggest Myths</h1>
+          <span class="post-date">June 2024</span>
+        </div>
+        <article class="post">
           <div class="body">
             <p>One of the most common things people ask is: &ldquo;Did you get diabetes from eating too many sweets?&rdquo; The short answer is: No.</p>
             <ol class="myths">
@@ -1262,12 +1322,15 @@
       <!-- ================= PAGE: STORY 4 ================= -->
       <section class="page" data-page="story-4" aria-labelledby="story-4-heading">
         <a class="back-link" href="#/stories">&larr; Back to all stories</a>
-        <article class="post">
-          <div class="post-meta">
-            <span class="post-cat">Food &amp; Carb Counting</span>
-            <span class="post-date">November 2026</span>
+        <div class="story-head">
+          <div class="page-top">
+            <img class="page-lotus" src="assets/lotus-logo.png" alt="" width="185" height="149" />
+            <p class="eyebrow">Food &amp; Carb Counting</p>
           </div>
           <h1 id="story-4-heading" tabindex="-1">Top Foods and Carb Counting</h1>
+          <span class="post-date">November 2026</span>
+        </div>
+        <article class="post">
           <div class="body">
             <p>Counting carbs is how I figure out my food. These are my handout posters — the foods I reach for, the ones I count carefully, and the treats I plan for. My rule is simple: <strong>count it, pair it with protein and vegetables, and check your CGM after.</strong></p>
             <p>Values marked ~ are calculated estimates for a typical serving, not printed on the poster — check your own care plan.</p>
@@ -1460,7 +1523,10 @@
       <!-- ================= PAGE: JOIN ================= -->
       <section class="page" data-page="join" aria-labelledby="join-heading">
         <div class="sec-head">
-          <p class="eyebrow">Join the Mission</p>
+          <div class="page-top">
+            <img class="page-lotus" src="assets/lotus-logo.png" alt="" width="185" height="149" />
+            <p class="eyebrow">Join the Mission</p>
+          </div>
           <h1 id="join-heading" tabindex="-1">Stand with kids with <span class="hl">T1D</span></h1>
           <p class="intro">Standing with kids with T1D doesn&rsquo;t take a big program — it starts with the small things people around me actually do. Here are four real ways to join the mission.</p>
         </div>
@@ -1507,7 +1573,10 @@
       <!-- ================= PAGE: CONTACT ================= -->
       <section class="page" data-page="contact" aria-labelledby="contact-heading">
         <div class="sec-head">
-          <p class="eyebrow">Contact</p>
+          <div class="page-top">
+            <img class="page-lotus" src="assets/lotus-logo.png" alt="" width="185" height="149" />
+            <p class="eyebrow">Contact</p>
+          </div>
           <h1 id="contact-heading" tabindex="-1">Send a message</h1>
           <p class="intro">Have a question about T1D 101 for schools, fundraising, or anything else on this site? Fill in the form and send it along.</p>
         </div>
@@ -1546,7 +1615,7 @@
 
       <footer class="site-foot">
         <div class="foot-row">
-          <p><span class="foot-brand">Aviva Cares</span> &middot; avivacares.org</p>
+          <p><img class="foot-logo" src="assets/lotus-logo.png" alt="" width="185" height="149" /><span class="foot-brand">Aviva Cares</span></p>
           <p><a href="https://www2.breakthrought1d.org/site/TR?fr_id=10957&amp;pg=team&amp;team_id=379405" target="_blank" rel="noopener">Donate to Aviva&rsquo;s Team <span class="ext" aria-hidden="true">&nearr;</span></a></p>
         </div>
         <nav class="foot-nav" aria-label="Footer">
