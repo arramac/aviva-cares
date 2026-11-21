@@ -249,10 +249,18 @@
   .hero-meta{display:flex; flex-wrap:nowrap; gap:14px; justify-content:flex-start; align-items:flex-start}
   .hero-card h1{
     font-size:1.6rem; font-weight:700; line-height:1.15; letter-spacing:-.01em;
-    margin-top:20px; max-width:16em;
+    margin-top:20px; max-width:none;
   }
   @media (min-width: 700px){ .hero-card h1{font-size:2.15rem} }
   @media (min-width: 1100px){ .hero-card h1{font-size:2.35rem} }
+  /* Desktop: widen the Home hero so the H1 fits on one line at its full
+     font size — the content column widens while Home is the active page,
+     and the hero card extends into the column's side padding. Mobile and
+     other pages keep the standard column width. */
+  @media (min-width: 1024px){
+    .wrap:has(> .page[data-page="home"].active){max-width:1200px}
+    .hero-card{margin-left:-56px; margin-right:-56px}
+  }
   .hero-card h1 em{font-style:italic; font-weight:600; color:var(--purple)}
   .hero-grid{display:grid; gap:28px; margin-top:26px}
   @media (min-width: 760px){
@@ -371,6 +379,14 @@
   .guide h3{font-size:1.6rem; margin-bottom:12px}
   .guide > p{color:var(--ink-soft); font-size:1.02rem; line-height:1.7}
   .guide .full-link{margin-top:16px; font-weight:700}
+
+  /* ---------- T1D Cat Tales ---------- */
+  .tales{display:grid; gap:14px}
+  @media (min-width: 700px){ .tales{grid-template-columns:1fr 1fr} }
+  .tale{border:1.5px solid var(--rule-soft); border-radius:18px; padding:20px; background:#fff}
+  .tale p{margin-top:8px; color:var(--ink-soft); font-size:1rem; line-height:1.6}
+  .tale .tale-link{display:inline-block; margin-top:12px; font-weight:800}
+  .tales-actions{margin-top:26px}
 
   /* ---------- Fundraiser ---------- */
   .fund{background:var(--ink); border-radius:24px; padding:30px 24px 34px; color:#fff}
@@ -564,7 +580,7 @@
             </a>
           </li>
           <li>
-            <a class="nav-link" href="https://www.instagram.com/stories/highlights/18401953741144225/" target="_blank" rel="noopener">
+            <a class="nav-link" href="#/t1d-cat-tales" data-route="t1d-cat-tales">
               <span class="nav-title"><span class="nav-name">T1D Cat Tales</span> <span class="arr" aria-hidden="true">&rarr;</span></span>
             </a>
           </li>
@@ -609,13 +625,14 @@
 
           <div class="hero-grid">
             <div>
-              <p class="lede">I&rsquo;m Aviva. I&rsquo;m a Youth Ambassador for Breakthrough T1D because I enjoy helping my community. I like to give back through food security initiatives at Ampowering, by walking runways to raise disability awareness, or helping elementary kids find their buses on Safety Patrol. <strong>I also live with Type 1 Diabetes.</strong> This means that my days come with extra data, glucose checks, alarms and balancing, but it has never been the whole story. This is my site for raising awareness and funds for T1D research.</p>
-              <ul class="loves" aria-label="Things Aviva loves — each one links to Instagram, @avivacares">
+              <p class="lede">I&rsquo;m Aviva. I&rsquo;m a Youth Ambassador for Breakthrough T1D. I like to increase awareness of Type 1 Diabetes through everyday cat humor and creating a food catalog. I also like to give back through food security initiatives at Ampowering, by walking runways to raise disability awareness, or helping elementary kids find their buses on Safety Patrol.</p>
+              <ul class="loves" aria-label="Things Aviva loves">
                 <li><a href="https://www.instagram.com/stories/highlights/18146844973544792/" target="_blank" rel="noopener" aria-label="Runway — Instagram story highlights, @avivacares (opens in a new tab)">Runway <span class="ext" aria-hidden="true">&nearr;</span></a></li>
                 <li><a href="https://www.instagram.com/stories/highlights/17958512000858724/" target="_blank" rel="noopener" aria-label="T1D Advocacy — Instagram story highlights, @avivacares (opens in a new tab)">T1D Advocacy <span class="ext" aria-hidden="true">&nearr;</span></a></li>
                 <li><a href="https://www.instagram.com/p/Dc2JQEpmnLk" target="_blank" rel="noopener" aria-label="Volunteering — Instagram post, @avivacares (opens in a new tab)">Volunteering <span class="ext" aria-hidden="true">&nearr;</span></a></li>
                 <li><a href="https://www.instagram.com/p/Dfal7LgPe80/" target="_blank" rel="noopener" aria-label="Safety Patrol — Instagram post, @avivacares (opens in a new tab)">Safety Patrol <span class="ext" aria-hidden="true">&nearr;</span></a></li>
                 <li><a href="https://www.instagram.com/avivacares/" target="_blank" rel="noopener" aria-label="Karate — Aviva's Instagram, @avivacares (opens in a new tab)">Karate <span class="ext" aria-hidden="true">&nearr;</span></a></li>
+                <li><a href="#/t1d-cat-tales" aria-label="T1D Cat Tales — Aviva's cat tales page">T1D Cat Tales</a></li>
               </ul>
               <div class="hero-actions">
                 <a class="btn btn-ink" href="#/about">Meet Aviva</a>
@@ -751,7 +768,7 @@
             <p class="eyebrow hero-intro">About Aviva</p>
           </div>
           <h1 id="about-heading" tabindex="-1">A student, an advocate, and a kid first</h1>
-          <p class="intro">My story starts with the things I love doing. Type 1 Diabetes is part of it, an important part, but it comes second.</p>
+          <p class="intro">Living with Type 1 Diabetes means that every single day is a science experiment. Because hormones can look different every day, I use hypotheses, data and a lot of resilience. There may be obstacles, but Type 1 Diabetes has also given me purpose.</p>
         </div>
         <div class="about-cols">
           <div class="about-item">
@@ -767,10 +784,6 @@
             <p>I created Aviva Cares to demystify T1D for classmates and teachers, raise funds for a cure through Breakthrough T1D, and turn my journey into action for others. My diagnosis became a starting point for speaking up and ensuring that no one with a disability feels lonely or left out.</p>
           </div>
         </div>
-        <blockquote class="pull">
-          <p>&ldquo;When you live with Type 1 Diabetes, every single day is a science experiment&hellip; it just means living life with extra data and a lot of resilience.&rdquo;</p>
-          <footer>From <a href="#/stories">T1D 101 for Schools &amp; Friends</a></footer>
-        </blockquote>
         <div class="celebrate">
           <h3>My diaversary is a celebration</h3>
           <p>Every year, we mark my <strong>diaversary</strong>, the anniversary of my diagnosis, not as a sad date, but as a celebration: another year of doing hard things, learning my body, and living without limits. Resilience is worth celebrating.</p>
@@ -1078,6 +1091,79 @@
         <nav class="page-nav" aria-label="More pages">
           <a href="#/photos">&larr; Photos</a>
           <a href="#/stories/top-foods-and-carb-counting">Next story: Top Foods and Carb Counting &rarr;</a>
+        </nav>
+      </section>
+
+      <!-- ================= PAGE: T1D CAT TALES ================= -->
+      <section class="page" data-page="t1d-cat-tales" aria-labelledby="cat-tales-heading">
+        <div class="sec-head">
+          <div class="page-top">
+            <img class="page-lotus" src="assets/lotus-logo.png" alt="" width="185" height="149" />
+            <p class="eyebrow">T1D Cat Tales</p>
+          </div>
+          <h1 id="cat-tales-heading" tabindex="-1">Funny cat moments from everyday life with T1D</h1>
+          <p class="intro">T1D Cat Tales are short, funny cat moments from my everyday life with Type 1 Diabetes. They were first shared as a highlight on my Instagram, <a href="https://www.instagram.com/avivacares/" target="_blank" rel="noopener">@avivacares</a> — here they all are in one place, newest first. The clips themselves live on Instagram, so tap any tale to watch it there.</p>
+        </div>
+
+        <div class="tales">
+          <article class="tale">
+            <span class="post-date">November 17, 2026</span>
+            <p>A clip from the T1D Cat Tales highlight.</p>
+            <a class="tale-link" href="https://www.instagram.com/stories/highlights/18401953741144225/?story_media_id=4032712098600511555" target="_blank" rel="noopener">Watch on Instagram <span class="ext" aria-hidden="true">&nearr;</span></a>
+          </article>
+          <article class="tale">
+            <span class="post-date">November 17, 2026</span>
+            <p>A clip from the T1D Cat Tales highlight.</p>
+            <a class="tale-link" href="https://www.instagram.com/stories/highlights/18401953741144225/?story_media_id=4032711898649596416" target="_blank" rel="noopener">Watch on Instagram <span class="ext" aria-hidden="true">&nearr;</span></a>
+          </article>
+          <article class="tale">
+            <span class="post-date">November 15, 2026</span>
+            <p>A fundraising nudge: the cats earn their keep in praise, while Aviva works toward a cure.</p>
+            <a class="tale-link" href="https://www.instagram.com/stories/highlights/18401953741144225/?story_media_id=4031149147007505851" target="_blank" rel="noopener">Watch on Instagram <span class="ext" aria-hidden="true">&nearr;</span></a>
+          </article>
+          <article class="tale">
+            <span class="post-date">November 15, 2026</span>
+            <p>Treating a low blood sugar with exactly the right amount of carbs.</p>
+            <a class="tale-link" href="https://www.instagram.com/stories/highlights/18401953741144225/?story_media_id=4031144286505404735" target="_blank" rel="noopener">Watch on Instagram <span class="ext" aria-hidden="true">&nearr;</span></a>
+          </article>
+          <article class="tale">
+            <span class="post-date">November 15, 2026</span>
+            <p>Myth-busting: cinnamon is not a cure for Type 1 diabetes — insulin is still needed every day.</p>
+            <a class="tale-link" href="https://www.instagram.com/stories/highlights/18401953741144225/?story_media_id=4031142027864357416" target="_blank" rel="noopener">Watch on Instagram <span class="ext" aria-hidden="true">&nearr;</span></a>
+          </article>
+          <article class="tale">
+            <span class="post-date">November 15, 2026</span>
+            <p>A clip from the T1D Cat Tales highlight.</p>
+            <a class="tale-link" href="https://www.instagram.com/stories/highlights/18401953741144225/?story_media_id=4031135883192225420" target="_blank" rel="noopener">Watch on Instagram <span class="ext" aria-hidden="true">&nearr;</span></a>
+          </article>
+          <article class="tale">
+            <span class="post-date">November 15, 2026</span>
+            <p>A clip from the T1D Cat Tales highlight.</p>
+            <a class="tale-link" href="https://www.instagram.com/stories/highlights/18401953741144225/?story_media_id=4031124458805721546" target="_blank" rel="noopener">Watch on Instagram <span class="ext" aria-hidden="true">&nearr;</span></a>
+          </article>
+          <article class="tale">
+            <span class="post-date">November 15, 2026</span>
+            <p>A thank-you to my sister for always having my back.</p>
+            <a class="tale-link" href="https://www.instagram.com/stories/highlights/18401953741144225/?story_media_id=4031120407418406652" target="_blank" rel="noopener">Watch on Instagram <span class="ext" aria-hidden="true">&nearr;</span></a>
+          </article>
+          <article class="tale">
+            <span class="post-date">November 14, 2026</span>
+            <p>Up at 5am to treat a low — and the cat was right there with me.</p>
+            <a class="tale-link" href="https://www.instagram.com/stories/highlights/18401953741144225/?story_media_id=4030291835086757715" target="_blank" rel="noopener">Watch on Instagram <span class="ext" aria-hidden="true">&nearr;</span></a>
+          </article>
+          <article class="tale">
+            <span class="post-date">May 11, 2026</span>
+            <p>Holding my fluffy black cat.</p>
+            <a class="tale-link" href="https://www.instagram.com/stories/highlights/18401953741144225/?story_media_id=3895066066157573588" target="_blank" rel="noopener">Watch on Instagram <span class="ext" aria-hidden="true">&nearr;</span></a>
+          </article>
+        </div>
+
+        <div class="tales-actions">
+          <a class="btn btn-solid" href="https://www.instagram.com/stories/highlights/18401953741144225/" target="_blank" rel="noopener">Watch the full highlight on Instagram <span class="ext" aria-hidden="true">&nearr;</span></a>
+        </div>
+        <nav class="page-nav" aria-label="More pages">
+          <a href="#/stories">&larr; T1D 101 for Schools &amp; Friends</a>
+          <a href="#/fundraiser">Next: Breakthrough T1D Fundraiser &rarr;</a>
         </nav>
       </section>
 
@@ -1699,6 +1785,7 @@
     '/t1d101':     { page:'stories',    nav:'stories',    title:'Aviva Cares — T1D 101 for Schools & Friends' },
     '/fundraiser': { page:'fundraiser', nav:'fundraiser', title:'Aviva Cares — Breakthrough T1D Fundraiser' },
     '/stories':    { page:'stories',    nav:'stories',    title:'Aviva Cares — T1D 101 for Schools & Friends' },
+    '/t1d-cat-tales': { page:'t1d-cat-tales', nav:'t1d-cat-tales', title:'Aviva Cares — T1D Cat Tales' },
     '/stories/all-about-my-type-1-diabetes': { page:'story-1', nav:'stories', title:'Aviva Cares — All About My Type 1 Diabetes' },
     '/stories/welcome-to-aviva-cares': { page:'story-1', nav:'stories', title:'Aviva Cares — All About My Type 1 Diabetes' },
     '/stories/what-that-beep-means':   { page:'story-2', nav:'stories', title:'Aviva Cares — What That Beep Means' },
